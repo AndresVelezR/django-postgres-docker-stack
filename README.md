@@ -18,19 +18,33 @@ Docker Compose stack that runs a Django application behind Nginx with PostgreSQL
 ## Repository structure
 ```
 .
-├── backend/                # Django project and app source
-│   ├── usuario_project/    # Django project settings and URLs
-│   ├── usuarios/           # Application models, views, URLs
-│   ├── Dockerfile          # Django container build
-│   ├── manage.py
-│   └── requirements.txt
-├── nginx/                  # Nginx reverse proxy
-│   ├── Dockerfile
-│   └── nginx.conf
-├── screenshots/            # Evidence assets (currently empty)
-├── docker-compose.yml
-├── .env
-└── .env.example
+├── backend
+│   ├── Dockerfile              # Django application image definition
+│   ├── manage.py               # Django management entry point
+│   ├── requirements.txt        # Python dependencies
+│   ├── media                   # User-uploaded media files
+│   ├── staticfiles             # Collected static assets
+│   ├── usuario_project         # Django project configuration
+│   │   ├── asgi.py              # ASGI entry point
+│   │   ├── settings.py          # Django settings
+│   │   ├── urls.py              # Root URL configuration
+│   │   └── wsgi.py              # WSGI entry point
+│   └── usuarios                # Domain app: user registration
+│       ├── admin.py             # Django admin configuration
+│       ├── apps.py              # App configuration
+│       ├── migrations           # Database migrations
+│       ├── models.py            # Database models
+│       ├── templates            # HTML templates
+│       │   └── usuarios
+│       │       └── formulario.html
+│       ├── urls.py              # App-level routing
+│       └── views.py             # Request handling logic
+├── docker-compose.yml          # Multi-container orchestration
+├── nginx
+│   ├── Dockerfile              # Nginx image definition
+│   └── nginx.conf              # Nginx reverse proxy configuration
+├── screenshots                 # Execution and persistence evidence
+└── README.md                   # Project documentation
 ```
 
 ## Prerequisites
