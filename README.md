@@ -100,3 +100,6 @@ docker compose down
 
 ## Conclusion
 This repository provides a production-oriented Docker Compose stack for a Django user registration application with PostgreSQL persistence and Nginx as the HTTP entrypoint and static/media server.
+
+# Author
+Andrés Vélez Rendón
